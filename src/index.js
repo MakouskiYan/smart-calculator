@@ -1,26 +1,38 @@
 class SmartCalculator {
   constructor(initialValue) {
-    // your implementation
+    this.value = initialValue.toString();//
   }
 
   add(number) {
-    // your implementation
+    this.value += ` + ${number.toString()}`;
+    return this;//we should always return object if we want like chaining thing!
   }
-  
+
   subtract(number) {
-    // your implementation
+    this.value += ` - ${number.toString()}`;
+    return this;
+
   }
 
   multiply(number) {
-    // your implementation
+    this.value += ` * ${number.toString()}` ;
+    return this;
+
   }
 
   devide(number) {
-    // your implementation
+    this.value += ` / ${number.toString()}`;
+    return this;
+
   }
 
   pow(number) {
-    // your implementation
+    this.value += ` ** ${number.toString()}`; //in es6 ** is equal to Math.pow()
+    return this;
+  }
+  // this needs to represent our obj to primitive in some cases!;
+  valueOf() {
+    return eval(this.value); //eval doing some magic with our string!
   }
 }
 
